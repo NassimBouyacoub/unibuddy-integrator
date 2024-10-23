@@ -6,6 +6,8 @@ function App() {
     <Router>
       <Routes>
         <Route path='/:lang/:id/' element={<Iframe />}/> 
+        <Route path='/' element={<h1>hi</h1>}/> 
+
       </Routes>
     </Router>
   );
