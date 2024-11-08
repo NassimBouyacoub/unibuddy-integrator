@@ -2,9 +2,18 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Iframe from './components/Iframe';
 import All from './components/All';
+import { useLocation } from 'react-router-dom';
+import ReactGA from 'react-ga4';
+
+const TRACKING_ID = "G-TR9J7V862N"; // Remplacez par votre propre ID GA4
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
+  const location = useLocation();
   useEffect(() => {
+    ReactGA.send("pageview", location.pathname + location.search);
+  }, [location]);
+    ReactGA.send("pageview");
     const script = document.createElement('script');
     script.src = 'https://cdn.unibuddy.co/unibuddy-iframe.js';
     // script.async = true; // optionnel : pour un chargement asynchrone
