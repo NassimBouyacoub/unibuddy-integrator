@@ -12,18 +12,17 @@ function App() {
   const location = useLocation();
   useEffect(() => {
     ReactGA.send("pageview", location.pathname + location.search);
-  }, [location]);
+
     ReactGA.send("pageview");
     const script = document.createElement('script');
     script.src = 'https://cdn.unibuddy.co/unibuddy-iframe.js';
     // script.async = true; // optionnel : pour un chargement asynchrone
     document.body.appendChild(script);
-
     return () => {
       document.body.removeChild(script); // Nettoyage si nécessaire
     };
-  }, []);
-  return (
+  }, [location]);
+    return (
     <Router>
       <Routes>
         <Route path='/:lang/:id/' element={<Iframe />}/> 
