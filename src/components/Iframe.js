@@ -17,7 +17,7 @@ function Iframe() {
   
   return (
     <div >
-      <iframe style={{ height: '98vh',border:"0px" }} data-ub-cookie-consent="necessary" data-ub-lang={langue} id="unibuddy-iframe" scrolling="yes" src={slugUni} title="Unibuddy" width="100%">
+      <iframe style={{ height: '98vh',border:"0px" }} data-ub-cookie-consent="necessary statistics marketing functional" data-ub-lang={langue} id="unibuddy-iframe" scrolling="yes" src={slugUni} title="Unibuddy" width="100%">
       </iframe>
     </div>
   );
